@@ -2,7 +2,7 @@ class Triangle
 
   attr_accessor :x, :y, :z, :isosceles, :equilateral, :scalene
 
-  def initialize
+  def initialize(x,y,z)
     @x = int(input("x: "))
     @y = int(input("y: "))
     @z = int(input("z: "))
@@ -11,7 +11,7 @@ class Triangle
   def kind(x,y,z)
     s = (x + y + z) / 2.0
     g = (s - x) * ( s - y ) * ( s - z )
-    if x <=0 || y <=0 || z <=0 || g <=0 
+    if x <=0 || y <=0 || z <=0 || g <=0
       begin
         raise TriangleError
       rescue TriangleError => error
